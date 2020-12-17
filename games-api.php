@@ -192,56 +192,8 @@ function checkIfGameExists($gameid) {
 	}
 }
 
-/*
-
-function bodyTypeToCat($bodytype, $propellant, $altpropellant) {
-$cats = [];
-if (in_array('Sedan', $bodytype)) {
-	$cats[] = 'Sedan';
-}
-if (in_array('7-pers', $bodytype)) {
-	$cats[] = '7-personers';
-}
-if (in_array('Cabriolet', $bodytype)) {
-	$cats[] = 'Cabriolet';
-}
-if (in_array('Coupe', $bodytype)) {
-	$cats[] = 'Coupé';
-}
-if (in_array('Hatchback', $bodytype)) {
-	$cats[] = 'Hatchback';
-}
-if (in_array('Mini', $bodytype)) {
-	$cats[] = 'Minibil';
-}
-if (in_array('offroad', $bodytype)) {
-	$cats[] = 'offroader';
-}
-if (in_array('Sommer', $bodytype)) {
-	$cats[] = 'Sommerbiler';
-}
-if (in_array('Sport', $bodytype)) {
-	$cats[] = 'Sportsvogn';
-}
-if (in_array('St.car', $bodytype)) {
-	$cats[] = 'Stationcar';
-}
-if (in_array('SUV', $bodytype)) {
-	$cats[] = 'SUV';
-}
-if ($propellant == 'El' || $altpropellant == 'El') {
-	$cats[] = 'El bil';
-}
-return $cats;
-}
-
-*/
-
 function createGame($data) {
 
-
-	/*print_r($data);
-	echo '<br><br>';*/
 	$post_arr = array(
                 'post_title'   => $data['data']['presentation']['gameName']['*'] . ' - ' . $data['id'],
                 'post_status'  => 'publish',
@@ -380,9 +332,8 @@ function updateGame($id, $data) {
             );
 						wp_update_post($post_arr);
                         wp_set_post_terms($id, $data['data']['report']['category'], 'gamecategory');
-                      
-						//wp_set_post_terms($newcarid, bodyTypeToCat($data['BodyTypes'], $data['Propellant'], $data['SecondaryPropellant']), 'bilkategori');
-}
+					  
+					}
 
 
 function importGames() {
